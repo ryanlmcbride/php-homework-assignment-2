@@ -15,3 +15,4 @@ Make it so that the displayed page keeps the information that the user filled in
 1.	When generating a textbox element, if you insert a VALUE attribute with a default value then that is what will be seen. Thus, if $c2 is your PHP variable for the color typed by the user, then you need to print the attribute VALUE='$c2' so that it continues to appear in the textbox after the submit button is pressed. If $c2 has no value then VALUE='' is what will be generated which is okay.
 
 # That's it! You're done!
+![Bilby Stampede](https://media.giphy.com/media/h8UyZ6FiT0ptC/giphy.gif)
