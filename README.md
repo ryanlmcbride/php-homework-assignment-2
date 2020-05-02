@@ -4,11 +4,11 @@ Create a PHP page (hw02.php) that has a small form at the top and a horizontal r
 
 The form should ask the user to enter a color value by selecting one from a drop down list or entering the value in a text box.
 
-If the user submits a color, then show that color as the background color of a 1x1 table that has a height and width of 200.
+- If the user submits a color, then show that color as the background color of a 1x1 table that has a height and width of 200.
 
-If the user BOTH selects a color and enters a value, then a message should be sent that says to enter only one or the other.
+- If the user BOTH selects a color and enters a value, then a message should be sent that says to enter only one or the other.
 
-If the user enters an invalid color value, then display an error message (A valid color must have exactly 3 or 6 characters which are all from the following set of symbols: 0123456789ABCDEFabcdef (BONUS!!!)
+- If the user enters an invalid color value, then display an error message (A valid color must have exactly 3 or 6 characters which are all from the following set of symbols: 0123456789ABCDEFabcdef (BONUS!!!)
 
 Make it so that the displayed page keeps the information that the user filled in. The way you do this is as follows: 
 
