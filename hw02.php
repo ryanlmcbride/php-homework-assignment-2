@@ -1,13 +1,17 @@
 <?php
 $color="";
-$red=(trim($_GET["red"]));
-$orange=(trim($_GET["orange"]));
-$yellow=(trim($_GET["yellow"]));
-$green=(trim($_GET["green"]));
-$blue=(trim($_GET["blue"]));
-//if(isset($_GET["submit"])){
-  //if
-//}
+if(isset($_GET["submit"]))
+{
+   if(isset($_GET["Inputcolor"])){
+    $GLOBALS['color']=trim($_GET['Inputcolor']);
+  }
+   if($_GET['dropColors']!="null"){
+        $GLOBALS['color'] = $_GET['dropColors'];
+      }
+   if(($_GET["Inputcolor"]!="null") && ($_GET["dropColors"]!="null")){
+    echo "Enter a value through only one input.";
+  }
+}
 ?>
 <!DOCTYPE html>
   <head>
@@ -21,43 +25,26 @@ $blue=(trim($_GET["blue"]));
             <div class="form-group">
               <label>Please Choose a Color or Type in a Color Below: </label>
               <div class="col-sm-6">
-                <input type="text" name="Inputcolor" class="form-control" value="">
+                <input type="text" name="Inputcolor" class="form-control" value="<?php echo $color;?>">
               </div>
             </div>
-           <!--<div class="dropdown">
-              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Colors
-                <span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Red</a></li>
-                  <li><a href="#">Orange</a></li>
-                  <li><a href="#">Yellow</a></li>
-                  <li><a href="#">Green</a></li>
-                  <li><a href="#">Blue</a></li>
-                  <li><a href="#">Indigo</a></li>
-                  <li><a href="#">Violet</a></li>
-                  <li><a href="#">Pink</a></li>
-                  <li><a href="#">White</a></li>
-                  <li><a href="#">Black</a></li>
-                  <li><a href="#">Brown</a></li>
-                </ul>
-            </div>-->
-      <label for="colors">Select ONE color:</label>
-        <select class="form-control" id="colors">
-          <option value="red">Red</option>
-          <option value="orange">Orange</option>
-          <option value="yellow">Yellow</option>
-          <option value="green">Green</option>
-          <option value="blue">Blue</option>
-          <option value="indigo">Indigo</option>
-          <option value="violet">Violet</option>
-          <option value="pink">Pink</option>
-        </select>
-
-        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
-
-        <hr>
-
-        <table class="table" style="background-color: <?php echo $color; ?>">
+            <label for="ddcolor">Select a Color:</label>
+            <div class="col-sm-6">
+              <select name="dropColors" class="form-control" id="ddcolor">
+                <option value="null">Colors</option>
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="pink">Pink</option>
+              </select>
+            </div> <br>
+              <div class="col-sm-2">
+              <button type="submit" name="submit" class="btn btn-primary" value="submit">Submit</button>
+            </div>
+              <hr>
+        <table class="table" style="background-color:<?php echo $color;?>; height:200px; width: 200px;">
           <tr>
             <td> Color duh</td>
           </tr>
