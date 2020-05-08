@@ -1,21 +1,27 @@
 <?php
 $color="";
+$userColor="";
+$dropColor="";
 if(isset($_GET["submit"]))
 {
+  $userColor=trim($_GET['Inputcolor']);
+  $dropColor=trim($_GET['dropColors']);
+  if($userColor!="" && $dropColor !="null")
+  {
+    $msg = "Please only input a color through only one input type...";
+    echo "<font color= 'red'>" . $msg . "</font>";
+ }
    if(isset($_GET["Inputcolor"])){
     $GLOBALS['color']=trim($_GET['Inputcolor']);
   }
    if($_GET['dropColors']!="null"){
         $GLOBALS['color'] = $_GET['dropColors'];
       }
-   if(($_GET["Inputcolor"]!="null") && ($_GET["dropColors"]!="null")){
-    echo "Enter a value through only one input.";
-  }
 }
 ?>
 <!DOCTYPE html>
   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body>
@@ -30,7 +36,7 @@ if(isset($_GET["submit"]))
             </div>
             <label for="ddcolor">Select a Color:</label>
             <div class="col-sm-6">
-              <select name="dropColors" class="form-control" id="ddcolor">
+              <select name="dropColors" class="form-control" id="ddcolor" >
                 <option value="null">Colors</option>
                 <option value="red">Red</option>
                 <option value="orange">Orange</option>
